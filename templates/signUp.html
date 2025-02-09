@@ -1,0 +1,111 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bari Khuji Signup</title>
+        <!--<title> Responsive Login Form </title>-->
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/static/signUp.css">
+        <link rel="stylesheet" href="/static/homePage.css">
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+                        
+    </head>
+    <body>
+        
+        <section class="container forms">      
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container-fluid mx-5 pt-2">
+          <div class="container-fluid ">
+            <img src="/static/logo4.svg" alt="" width="46%" height="">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+          </div>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav  me-auto mb-2 mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link active text-light fw-semibold pe-5" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-light fw-semibold pe-5" aria-current="page" href="{% url 'RentPost' %}">Post</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link text-light fw-semibold pe-5" aria-current="page" href="{% url 'profile' %}">Profile</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-light fw-semibold pe-5" href="{% url 'index' %}">ShowPost</a>
+            </li>
+            {% comment %} <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light fw-semibold pe-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu text-light fw-semibold pe-5">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled text-light fw-semibold pe-5">Disabled</a>
+            </li>
+            <li class="nav-item">
+            </li> {% endcomment %}
+          </ul>
+          <form class="d-flex" role="search">
+
+            <input class="form-control me-2 search-btn" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success me-3" type="submit">Search</button>
+          
+            <a href="{% url 'logout' %}"  class="btn btn btn-primary btn-lg text-light fw-semibold fs-6 px-5 login-btn" type="submit">Logout</a>
+          </form>
+        </div>
+      </div>
+    </nav>
+            <!-- SignUp -->           
+            <div class="form login">
+              <div class="form-content">
+                  <header>Sign Up</header>
+                  
+                  <form method="POST" action="" >
+                    {% csrf_token %}
+                    <div class="field input-field">
+                      <input type="text" name="fname" placeholder="First Name" class="input" >
+                  </div>
+                  <div class="field input-field">
+                    <input type="text" name="lname" placeholder="Last Name" class="input" >
+                </div>
+                      <div class="field input-field">
+                        <input type="text" name="username" placeholder="Username" class="input" >
+                    </div>
+                        <div class="field input-field">                          
+                            <input type="email"  name="email" placeholder="Email" class="input" >
+                        </div>                       
+                        <div class="field input-field">                     
+                            <input type="password" name="password" placeholder="Password" class="password" >
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+                      
+                        <div class="field button-field">
+                            <input type="submit">Sign Up</button>
+                        </div>
+                    </form>
+                      <div class="form-link">
+                        <span>Already Have an account? <a href="{% url 'login' %}" class="link login-link">Login</a></span>
+                    </div> 
+                    
+        </section>
+        <!-- JavaScript -->
+        <!--<script src="js/script.js"></script>-->
+    </body>
+</html>

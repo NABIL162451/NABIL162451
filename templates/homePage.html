@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <link rel="stylesheet" href="/static/homePage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    
+  <script src="https://kit.fontawesome.com/1c5181eb72.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  
+    <title>Bari Khuji</title>
+    
+
+</head>
+<body>
+
+    <!-- Navbar -->
+        
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid mx-5 pt-2">
+            <div class="container-fluid ">
+              <img src="/static/logo4.svg" alt="" width="46%" height="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav  me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item">
+                <a class="nav-link active text-light fw-semibold pe-5" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-light fw-semibold pe-5" aria-current="page" href="{% url 'RentPost' %}">Post</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link text-light fw-semibold pe-5" aria-current="page" href="{% url 'profile' %}">Profile</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link text-light fw-semibold pe-5" href="{% url 'index' %}">ShowPost</a>
+              </li>
+              {% comment %} <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light fw-semibold pe-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu text-light fw-semibold pe-5">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled text-light fw-semibold pe-5">Disabled</a>
+              </li>
+              <li class="nav-item">
+              </li> {% endcomment %}
+            </ul>
+            <form class="d-flex" role="search">
+
+              <input class="form-control me-2 search-btn" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success me-3" type="submit">Search</button>
+            
+              <a href="{% url 'logout' %}"  class="btn btn btn-primary btn-lg text-light fw-semibold fs-6 px-5 login-btn" type="submit">Logout</a>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!-- Banner -->
+
+      <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video class="banner-video" src="/static/cliff-1911.mp4" width="100%" autoplay ></video>
+            
+          </div>
+          <div class="carousel-item second-banner-img">
+          
+            <p class="second-banner first-banner-text">Your Dream <span class="second-banner-text">Our Passion</span></p>  
+          </div>
+          <div class="carousel-item ">
+            <video class="banner-video" src="/static/vid_for_project.mp4" width="100%" autoplay ></video>
+          </div>
+          <div class="carousel-item second-banner-img">
+            <p class="second-banner first-banner-text">House <span class="second-banner-text">First Class</span></p>
+          </div>
+          
+      
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+
+
+      <!-- Second Section -->
+
+
+
+
+  <div class="idea-section">
+    <div class="container text-center text-light second-section ml-0">
+      <div class="row align-items-start">
+        <div class="col text-start pe-5">
+          <p class="PHILOSOPHY">
+            <box-icon name='dots-horizontal' color='#ffffff'></box-icon>PHILOSOPHY
+          </p>
+          <h1 class="idea-text gradient-text-color">The Idea</h1><br>
+          <p class="idea-paragraph">A house rental system is a worthwhile project that can simplify finding a suitable
+            rental property
+            for landlords and tenants. This system is a web and app-based application that allows house
+            owners and tenants to manage their properties. The system will be able to help the users to find
+            them their desired apartment or house for rent. The house owner and the person renting the house
+            will be able to see all the details they need about the house and the persons who will be renting it
+            through this system.</p>
+          <a class="idea-view-anchor" href="#">View More &nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
+        </div>
+        <div class="col float-end">
+          <img width="95%" src="/static/inner_01.png" alt="">
+        </div>
+
+      </div>
+
+      <div class="container text-start idea-count">
+        <div class="row align-items-start">
+          <div class="col">
+            <h1 class="idea-text" style="color: #997245;">1270</h1>
+            <p class="fw-semibold">SQUARE METERS</p>
+          </div>
+          <div class="col">
+            <h1 class="idea-text" style="color: #997245;">10</h1>
+            <p class="fw-semibold">SEPARATE VILLAS</p>
+          </div>
+          <div class="col">
+            <h1 class="idea-text" style="color: #997245;">20</h1>
+            <p class="fw-semibold">MILES FROM THE CITY</p>
+          </div>
+          <div class="col">
+            <h1 class="idea-text" style="color: #997245;">2023</h1>
+            <p class="fw-semibold">PROJECT FINISH</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+  <!-- 3rd Section -->
+
+  <div class=" text-center">
+
+    <div class="row m-0">
+      <div class="col-7 third-section-img">
+        <img src="/static/bg3.jpg" alt="">
+      </div>
+      <div class="col-4 third-section-text text-start ms-5 mt-5">
+
+        <p class="PHILOSOPHY">
+          <box-icon name='dots-horizontal' color='#000'></box-icon>MATERIALS
+        </p>
+        <h1 class="idea-text gradient-text-color">Fine Touch of Luxury</h1><br>
+        <p class="idea-peragraph">Guided by our philosophy we seek to enhance the singular characteristics presented in
+          each property that are
+          as particular information clickthroughs a fingerprint immersion along loop.</p>
+        <a class="idea-view-anchor " href="#">View More &nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- 4th Section -->
+
+  <div class=" text-center">
+
+    <div class="row m-0">
+
+      <div class="col-4 third-section-text text-start ms-5 mt-5">
+
+        <p class="PHILOSOPHY">
+          <box-icon name='dots-horizontal' color='#000'></box-icon>INTERIORS
+        </p>
+        <h1 class="idea-text gradient-text-color">Superior Style</h1><br>
+        <p class="idea-peragraph">Bring to the table win-win survival strategies to ensure proactive domination. At the
+          end of the day, going forward, a new normally evolved from generation X is on the runway heading towards.</p>
+        <a class="idea-view-anchor" href="#">View More &nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
+
+      </div>
+
+      <div class="col-7 fourth-section-img">
+        <img src="/static/bg4.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- 5th section -->
+  <div class="fifth-section">
+    <div class="container text-center">
+
+      <div class="row">
+        <div class="col-6 text-start">
+          <p class="PHILOSOPHY text-light">
+            <box-icon name='dots-horizontal' color='#ffffff'></box-icon>NESTIN HOUSE
+          </p>
+          <h1 class="idea-text gradient-text-color">Designed to meet the highest criteria</h1>
+        </div>
+        
+      </div>
+    </div>
+
+
+    <div class="container text-start text-light idea-count">
+      <div class="row align-items-start">
+        <div class="col">
+          <h1 class="idea-text" style="color: #997245;">
+            <i class="fa-regular fa-building"></i>
+          </h1>
+          <p class="fw-semibold">PROJECT MANAGEMENT</p>
+          <p>Capitalize on low hanging fruit to identify a ballpark value added activity.</p>
+        </div>
+        <div class="col">
+          <h1 class="idea-text" style="color: #997245;">
+            <i class="fa-solid fa-solar-panel"></i>
+          </h1>
+          <p class="fw-semibold">SOLAR PANELS</p>
+          <p>To beta test override the digital divide with additional clickthroughs from.</p>
+        </div>
+        <div class="col">
+          <h1 class="idea-text" style="color: #997245;">
+            <i class="fa-solid fa-leaf"></i>
+          </h1>
+          <p class="fw-semibold">NATURAL ENVIRONMENT</p>
+          <p>DevOps nanotechnology immersion along the information highway will.</p>
+        </div>
+        <div class="col">
+          <h1 class="idea-text" style="color: #997245;">
+            <i class="fa-solid fa-mountain-city"></i>
+          </h1>
+          <p class="fw-semibold">URBAN PLANNING</p>
+          <p>Close the loop on focusing solely on the bottom line capitalize on low hanging.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 6th section -->
+  <div>
+    <p class="PHILOSOPHY ">
+      <box-icon name='dots-horizontal' color='#000'></box-icon>CHOOSE YOUR TYPE
+    </p>
+    <h1>Sophisticated and Spacious</h1>
+
+    <!-- 3ta Card dibo -->
+
+
+
+  </div>
+
+
+  <!-- 7th section -->
+
+
+  <div class=" text-center seventh-section">
+    <div class="row align-items-start m-0 ">
+      <div class="col-5 ">
+        <img src="/static/img1.png" height="250px" alt="">
+      </div>
+      
+
+      <div class="col-4 text-start ">
+        <h1 class="gradient-text-color seventh-section-title">Luxury Town Houses</h1>
+        <h2 class="seventh-section-amount">from $999 000</h2>
+      </div>
+      <div class="col-3 seventh-section-3rd-col mt-5 pt-1">
+        
+        <a href="#" class="text-light fw-semibold fs-6 px-4  seventh-section-btn text-decoration-none">
+          <div class="container text-center">
+            <div class="row align-items-start call-btn pt-3 pb-1">
+              <div class="col-4 fs-1">
+                <i class="fa-solid fa-mobile-retro fs-1 text-light"></i>
+              </div>
+              <div class="col-7 text-start ">
+                <p>RENT YOUR
+                  HOUSE</p>
+                <p class="fs-5 fw-bold">+880 19326326</p>
+              </div>
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+  
+</div>
+</div>
+
+
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+      <script>
+        const navEl = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+          if(window.scrollY >= 130){
+            navEl.classList.add('navbar-scrolled');
+          }
+          else if(window.scrollY < 130){
+            navEl.classList.remove('navbar-scrolled');
+          }
+        });
+
+      </script>
+  
+</body>
+</html>

@@ -1,0 +1,219 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bari Khuji Signup</title>
+        <!--<title> Responsive Login Form </title>-->
+        <script
+          src="https://kit.fontawesome.com/143829a9e0.js"
+          crossorigin="anonymous"
+        ></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="/static/houseReg2.css">
+        
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+                        
+    </head>
+    <body>
+        
+        <section class="container forms">
+
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid mx-5 pt-2">
+                <div class="container-fluid ">
+                  <img src="/static/logo4.svg" alt="" width="46%" height="">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav  me-auto mb-2 mb-lg-0 ">
+                  <li class="nav-item">
+                    <a class="nav-link active text-light fw-semibold pe-5" aria-current="page" href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-light fw-semibold pe-5" aria-current="page" href="{% url 'RentPost' %}">Post</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link text-light fw-semibold pe-5" aria-current="page" href="{% url 'profile' %}">Profile</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link text-light fw-semibold pe-5" href="{% url 'index' %}">ShowPost</a>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex" role="search">
+    
+                  {% comment %} <input class="form-control me-2 search-btn" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success me-3" type="submit">Search</button> {% endcomment %}
+                
+                  <a href="{% url 'logout' %}"  class="btn btn btn-primary btn-lg text-light fw-semibold fs-6 px-5 login-btn" type="submit">Logout</a>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+           <br> <!--User Info -->
+          <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="form login">
+                <div class="form-content">
+                    <header></header>
+                    <form action="{% url 'RentPost' %}" method="POST" enctype="multipart/form-data">
+
+                      
+                      {% csrf_token %}
+                      <div class="col-md-4 mb-3">
+                        
+                        <label>Area</label>
+                        <input type="text" name="Area" id="Area" placeholder="Area" class="form-control" >
+                    </div>
+                    <button class="button" type="button" onclick="voice('Area', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+
+                        <button type="button" class="button"  onclick="voice('Area', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+
+                    <div class="col-md-4 mb-3">
+                        <label>Rent</label>
+                        <input  type="text" name="Rent" id="Rent" placeholder="Rent" class="form-control"  >
+
+                        <!-- <div class="valid-feedback">
+                            Looks good!
+                        </div> -->
+                    </div>
+                    <button type="button" class="button" onclick="voice('Rent', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                        <button type="button" class="button"  onclick="voice('Rent', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+
+                    <div class="col-md-4 mb-3">
+                        <label>House Details</label>
+                        <input type="text" name="HouseDetails" id="HouseDetails" placeholder="HouseDetails" class="form-control">
+                        <!-- <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div> -->
+                    </div>
+                    <button type="button" class="button"  onclick="voice('HouseDetails' , 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                    <button type="button" class="button"  onclick="voice('HouseDetails', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+
+                    <div class="col-md-4 mb-3">
+                        <label>SquareFeet</label>
+                        <input type="text" name="SquareFeet" id="SquareFeet" placeholder="House Space in SquareFeet" class="form-control" >
+                        <button type="button" class="button"  onclick="voice('SquareFeet', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                        <button type="button" class="button"  onclick="voice('SquareFeet', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+
+                        
+
+                   
+                    <div class="col-md-15 mb-3">
+                        <label>PhoneNo</label>
+                        <input type="integer" name="PhoneNo" id="PhoneNumber" placeholder="Phone Number"  class="form-control" >
+                        <!-- <div class="valid-feedback">
+                            Please provide a valid city.
+                        </div> -->
+                    </div>
+                    <button type="button" class="button"  onclick="voice('PhoneNumber', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                        <button type="button" class="button"  onclick="voice('PhoneNumber', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+                         <script> 
+                        function voice(name, language){
+                              var recognition = new webkitSpeechRecognition();
+                              recognition.lang= language;
+                              recognition.onresult = function(event){
+                                  console.log(event);
+                                  document.getElementById(name).value = event.results[0][0].transcript;
+                              }
+                              recognition.start();
+                          }
+                        </script>
+                        <script>
+                          function speak(text) {
+                            const utterance = new SpeechSynthesisUtterance(text);
+                            utterance.voiceURI = 'Google UK English Female';
+                            utterance.lang = 'en-GB';
+                            utterance.pitch = 1.2; // Adjust the pitch if needed
+                            speechSynthesis.speak(utterance);
+                          }
+                        
+                          // Ask the question in voice when the page loads
+                          window.addEventListener('DOMContentLoaded', function () {
+                            const areaQuestion = 'What is your area?';
+                            speak(areaQuestion);
+                          });
+                        
+                          // Ask the question for the Rent field
+                          document.getElementById('Rent').addEventListener('focus', function () {
+                            const rentQuestion = 'What is your Rent?';
+                            speak(rentQuestion);
+                          });
+                        
+                          // Ask the question for the details field
+                          document.getElementById('HouseDetails').addEventListener('focus', function () {
+                            const housedetailsQuestion = 'Enter your house details.';
+                            speak(housedetailsQuestion);
+                          });
+                        
+                          // Ask the question for the SquareFeet field
+                          document.getElementById('SquareFeet').addEventListener('focus', function () {
+                            const squarefeetQuestion = 'Enter square feet.';
+                            speak(squarefeetQuestion);
+                          });
+                        
+                          // Ask the question for the PhoneNumber field
+                          document.getElementById('PhoneNumber').addEventListener('focus', function () {
+                            const numberQuestion = 'Enter your phone number.';
+                            speak(numberQuestion);
+                          });
+                        </script>
+                        <div class="col-md-15 mb-5">
+                            <label>House Image</label>
+                            <input type="file" class="form-control" placeholder="House Image"  name="HouseImage" required>
+                            <div class="invalid-feedback">
+                                Please provide a PNG/JPEG Image.
+                            </div>
+                        </div>
+                        <div class="field button-field">
+                          <input type="submit" value="Submit">Submit</button>
+                      </div>
+            </div>
+          </div>
+          </section>
+          <style>
+            /* Styling for the footer */
+            footer {
+              background-color: #f2f2f2;
+              padding: 10px;
+              text-align: center;
+              font-family: Arial, sans-serif;
+              font-size: 14px;
+              color: #999;
+            }
+          
+            /* Styling for the copyright symbol */
+            .copyright {
+              color: #555;
+            }
+          </style>
+          
+          <footer>
+            <p>&copy; <span class="copyright">
+              <span id="year"></span> CSE_Project_Nabil</span>. All rights reserved.
+            </p>
+          </footer>
+          
+          <script>
+            // Get the current year
+            var currentYear = new Date().getFullYear();
+            // Update the year in the HTML
+            document.getElementById("year").textContent = currentYear;
+          </script>
+          
+          
+    </body>
+</html>

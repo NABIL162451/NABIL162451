@@ -1,0 +1,166 @@
+{% comment %} <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile</title>
+        
+
+        <script
+          src="https://kit.fontawesome.com/143829a9e0.js"
+          crossorigin="anonymous"
+        ></script>
+        
+        <link rel="stylesheet" href="/static/userinfo.css">
+        
+        
+                
+   
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+      
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+                        
+    </head>
+    <body class="profile-bg">
+        
+        <section class="container forms">
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container-fluid mx-5 pt-2">
+                <div class="container-fluid ">
+                  <img src="/static/logo4.svg" alt="" width="46%" height="">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav  me-auto mb-2 mb-lg-0 ">
+                  <li class="nav-item">
+                    <a class="nav-link active text-light fw-semibold pe-5" aria-current="page" href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-light fw-semibold pe-5" aria-current="page" href="{% url 'RentPost' %}">Post</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link text-light fw-semibold pe-5" aria-current="page" href="{% url 'profile' %}">Profile</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link text-light fw-semibold pe-5" href="{% url 'index' %}">ShowPost</a>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex" role="search">
+    
+                  <input class="form-control me-2 search-btn" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success me-3" type="submit">Search</button>
+                
+                  <a href="{% url 'logout' %}"  class="btn btn btn-primary btn-lg text-light fw-semibold fs-6 px-5 login-btn" type="submit">Logout</a>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+     
+
+            <div class="form login">
+              <div class="form-content">
+                  <header>Informations</header>
+                  <form action="{% url 'profile' %}" method='POST'>
+                    
+                  {% csrf_token %}
+                      <div class="field input-field">
+                        <input type="text" name="Name" id="Name" placeholder="Name" class="fa-solid fa-microphone" >
+                        
+                      </div>
+                      <button type="button" onclick="voice('Name', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                      <button type="button" onclick="voice('Name', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+
+                      <div class="field input-field">
+                        <input type="text" name="FatherName" id="FatherName" placeholder="Father Name" class="fa-solid fa-microphone" >
+                        
+                      </div>
+                      <button type="button" onclick="voice('FatherName', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                      <button type="button" onclick="voice('FatherName', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+
+                      <div class="field input-field">
+                        <input type="text" name="Address" id="Address" placeholder="Address" class="address" >
+                      </div>
+
+                      <button type="button" onclick="voice('Address', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                      <button type="button" onclick="voice('Address', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+                      
+                      <div class="field input-field">
+                        <input type="text" name="ContactNumber" id="numb" placeholder="Contact Number" class="Number" >
+                      </div>
+
+                      <button type="button" onclick="voice('numb', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                      <button type="button" onclick="voice('numb', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+
+                      <div class="field input-field">
+                        <input type="text" name="NidNumber" id="nid" placeholder="NID Number" class="NID" >
+                      </div>
+
+                      <button type="button" onclick="voice('nid', 'bn-IN')"> <i class="fa-solid fa-microphone"> Bangla</i></button>
+                      <button type="button" onclick="voice('nid', 'en-GB')"> <i class="fa-solid fa-microphone"> English</i></button>
+
+                      <script>
+                        function voice(name, language){
+                            var recognition = new webkitSpeechRecognition();
+                            recognition.lang=language;
+                            recognition.onresult = function(event){
+                                console.log(event);
+                                document.getElementById(name).value = event.results[0][0].transcript;
+                            }
+                            recognition.start();
+                        }
+                      </script>
+                          
+
+                        <div class="col-md-4 mb-5">
+                            <label>NID</label>
+                            <input type="file" class="form-control"
+                                    name="NID front Image" required>
+                            <div class="invalid-feedback">
+                                Please provide a PNG/JPEG Image.
+                            </div>
+                        </div>
+                        <div class="field button-field">
+                          <input type="submit"></button>
+                      </div>
+            </div>
+            
+          </section>
+          <style>
+          <style>
+            
+            footer {
+              background-color: #f2f2f2;
+              padding: 10px;
+              text-align: center;
+              font-family: Arial, sans-serif;
+              font-size: 14px;
+              color: #999;
+            }
+          
+            
+            .copyright {
+              color: #555;
+            }
+          </style>
+          
+          <footer>
+            <p>&copy; <span class="copyright">
+              <span id="year"></span> CSE_Project_Nabil</span>. All rights reserved.
+            </p>
+          </footer>
+          
+          <script>
+            
+            var currentYear = new Date().getFullYear();
+          
+            document.getElementById("year").textContent = currentYear;
+          </script>
+          
+          
+    </body>
+</html> {% endcomment %}
